@@ -38,7 +38,15 @@
     <section class="featured-cards">
         <div class="container">
             <h3>Featured Credit Cards</h3>
-            <!-- Card components will be dynamically generated here -->
+            <div class="card-list">
+                {% for card in featured_cards %}
+                <div class="card">
+                    <h4>{{ card[1] }}</h4> <!-- Assuming the card name is in the second column -->
+                    <p>Cashback Percentage: {{ card[2] }}</p> <!-- Assuming cashback percentage is in the third column -->
+                    <!-- Add more card details here as needed -->
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </section>
 
