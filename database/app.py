@@ -4,10 +4,10 @@ import psycopg2
 app = Flask(__name__)
 
 # Database connection settings
-DB_HOST = 'your_host'
-DB_NAME = 'your_database'
-DB_USER = 'your_username'
-DB_PASSWORD = 'your_password'
+DB_HOST = 'localhost'
+DB_NAME = 'bts'
+DB_USER = 'postgres'
+DB_PASSWORD = '1'
 
 @app.route('/')
 def index():
@@ -16,7 +16,7 @@ def index():
     cur = conn.cursor()
 
     # Query credit card data
-    cur.execute("SELECT * FROM credit_cards ORDER BY cashback_percentage DESC LIMIT 5")
+    cur.execute("SELECT * FROM bank_cards ORDER BY cashback_percentage DESC LIMIT 5")
     featured_cards = cur.fetchall()
 
     # Close database connection
