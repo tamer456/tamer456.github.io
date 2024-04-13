@@ -25,5 +25,9 @@ def index():
 
     return render_template('index.html', featured_cards=featured_cards)
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
