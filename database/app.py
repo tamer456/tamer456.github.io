@@ -9,14 +9,14 @@ DB_NAME = 'bts'
 DB_USER = 'postgres'
 DB_PASSWORD = '1'
 
-@app.route('/')
+@app.route('/index.html')
 def index():
     # Connect to PostgreSQL
     conn = psycopg2.connect(host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASSWORD)
     cur = conn.cursor()
 
     # Query credit card data
-    cur.execute("SELECT * FROM bank_cards ORDER BY cashback_percentage DESC LIMIT 5")
+    cur.execute("SELECT * FROM cashback_offers ORDER BY cashback_percentage DESC LIMIT 5")
     featured_cards = cur.fetchall()
 
     # Close database connection

@@ -47,6 +47,12 @@
                 </div>
                 {% endfor %}
             </div>
+            <h1>Cashback Information</h1>
+            <ul>
+                {% for cashback in cashback_data %}
+                <li>{{ cashback[0] }}%</li>
+                {% endfor %}
+            </ul>
         </div>
     </section>
 
